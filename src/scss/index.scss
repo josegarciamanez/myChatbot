@@ -1,5 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
+@import "reset";
+@import "variables";
+
 body {
     font-family: 'Roboto', sans-serif;
+    color:$primary; 
+}
+.heading {
+    position: fixed;
+    top: 0;
+    background-color: white;
+    border-bottom: 1px solid;
+}
+
+.listStyle {
+    padding: 60px 0;
+}
+
+.formPosStyle {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 0;
+    background-color:white;
 }

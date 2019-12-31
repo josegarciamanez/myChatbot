@@ -2,41 +2,21 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { msgChatMessageRequest } from "./store/actions";
 
-const headingStyle = {
-  position: "fixed",
-  top: 0,
-  backgroundColor: "white",
-  borderBottom: "1px solid"
-};
-const listStyle = {
-  paddingTop: "60px",
-  paddingBottom: "60px"
-};
-const formPosStyle = {
-  position: "fixed",
-  bottom: 0,
-  marginBottom: 0,
-  backgroundColor: "white"
-};
-
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.state = {
-      textToBeSent: ""
-    };
-  }
+  state = {
+    textToBeSent: "",
+    nombre: 'Pepe'
+  };
+
   componentDidUpdate() {
     window.scrollTo(0, document.body.scrollHeight);
   }
 
-  handleChange(e) {
+  handleChange = e => {
     this.setState({ textToBeSent: e.target.value });
   }
 
-  handleSubmit(e) {
+  handleSubmit = e => {
     e.preventDefault();
     const { textToBeSent } = this.state;
     const { sendMessage } = this.props;
@@ -52,22 +32,23 @@ class App extends Component {
     const { textToBeSent } = this.state;
     const { messages, onProcess } = this.props;
     console.log(messages);
+    console.log(textToBeSent);
     return (
       <Fragment>
-        <h1 style={headingStyle}>React Chat Bot</h1>
-        {/* message thread */}
-        <ul style={listStyle}>
+        <h1 className="heading">React Chat Bot With DialogFlow</h1>
+
+        <ul className="listStyle">
           {messages.map(({ text, sender, isErrorMessage }, index) => (
             <li
               key={index}
               style={{ color: isErrorMessage ? "crimson" : "dodgerblue" }}
             >
-              [{sender}]: {text}
+              [{sender === 'Bot' ? 'Robot' : this.state.nombre}]: {text}
             </li>
           ))}
         </ul>
-        {/* form input to send chat message */}
-        <form onSubmit={this.handleSubmit} style={formPosStyle}>
+
+        <form onSubmit={this.handleSubmit} className="formPosStyle">
           <input
             ref={input => input && input.focus()}
             type="text"
