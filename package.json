@@ -2,13 +2,27 @@
   "name": "my-chatbot",
   "version": "0.1.0",
   "private": true,
+  "description": " I use these technology stacks: React,  Redux, React-redux,  Our-Own-Redux-Middleware, Dialogflow",
+  "keywords": [
+    "bot",
+    "react",
+    "chat",
+    "dialogflow"
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "api-ai-javascript": "^2.0.0-beta.21",
+    "await-to-js": "^2.1.1",
+    "milligram": "^1.3.0",
+    "node-sass": "^4.13.0",
+    "random-bool": "^1.0.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.3.0"
+    "react-redux": "^7.1.3",
+    "react-scripts": "3.3.0",
+    "redux": "^4.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
