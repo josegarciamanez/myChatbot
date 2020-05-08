@@ -11,16 +11,23 @@ body {
     position: fixed;
     top: 0;
     background-color: white;
-    border-bottom: 1px solid;
+    border-bottom: 1px dotted;
 }
 
 .listStyle {
     padding: 60px 0;
+    list-style-type: square;
 }
 
 .formPosStyle {
     position: fixed;
     bottom: 0;
-    margin-bottom: 0;
+    margin-bottom: 20px;
     background-color:white;
+    width: 100%;
+}
+
+.form-group {
+    border: none !important;
+    border-bottom: 0.1rem solid #d1d1d1 !important;
 }
